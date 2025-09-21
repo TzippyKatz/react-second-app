@@ -6,8 +6,9 @@ function StoreItems() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const d = getProducts();
-        setData(d);
+        getProducts().then(jsonData => {
+            setData(jsonData);
+        });
     }, []);
 
     useEffect(() => {
