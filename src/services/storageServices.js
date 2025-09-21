@@ -10,7 +10,7 @@ export function setLocalStorage(key, value) {
 export function GetLocalStorage(key) {
     try {
         const data = localStorage.getItem(key);
-        return data ? JSON.stringify(data) : null;
+        return data ? JSON.parse(data) : null;
     }
     catch (error) {
         console.error("Error reading from localStorage", error);
